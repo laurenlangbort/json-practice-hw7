@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JSON Example</title>
+  </head>
+  <body>
+    <pre id="songDisplay"></pre>
+
+    <script>
+      fetch("songs.json")
+        .then(response => response.json())
+        .then(data => {  
+            for(var i = 0; i < data.length; i++) 
+            { 
+                document.getElementById("songDisplay").innerHTML = "hi";
+            }
+        });
+          
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
