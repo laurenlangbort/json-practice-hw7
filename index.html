@@ -6,8 +6,6 @@
     <style> 
     </style>
     <body> 
-        <div id="songlist"></div>
-        <div id="part2"></div> 
         <div id="part3"></div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js">    
         </script>
@@ -15,7 +13,8 @@
             $.get( "https://laurenlangbort.github.io/json-practice-hw7/songs.json", 
             function( data ) 
             {
-                console.log(typeof data); 
+                console.log(typeof data);  
+                console.log(data[0]);
       
                 var display= "<ul>"; 
                 console.log(display);
@@ -28,7 +27,7 @@
                     + "Released: " + songs.year + "<br><br>" + "</li>";
                 }) 
             display += "</ul>";
-            document.write(display + "<br><br>");
+            document.getElementById("part3").innerHTML = display + "<br><br>";
         })
         </script>
     </body>
