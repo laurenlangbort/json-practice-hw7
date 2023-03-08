@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Wedding Song Playlist</title>
+    </head>
+    
+    <!-- INCLUDING JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <body>
+        <div id = "display"></div>
+        <div id = "user-friendly"></div>
+        
+        <script language="javascript">
+            //part 2: Serialize and Display
+            var str = "";
+            $.get("https://atcheng456.github.io/songslist/songlist.json", 
+                  function( data ) {
+                    str = JSON.stringify(data);
+                
+                    //Part 2: Serialize and Display
+                    strdisplay = str + "<br/>";
+                
+                    strHTML= "<ul>";
+        
+                    data.forEach(function(songs) { 
+                        //Part 3: User Friendly Display
+                        strHTML += "<li>" + songs.title + ": " + songs.artist + "</li>" + "Genre: " + songs.genre + "<br/>" + "Released: " + songs.released + "<br/>" + "<br/>";
+                    })
+                
+                strHTML += "</ul>";
+                
+                document.getElementById("display").innerHTML = strdisplay;
+                document.getElementById("user-friendly").innerHTML = strHTML;
+            });
+            
+            function filter() {
+                //Part 4: Filter the Data
+                var data = JSON.parse(str);
+                
+                var select = document.getElementById("genreForm");
+                var selectedGen = select.value; 
+                
+                strHTML = "<br/>";
+                
+                data.forEach(function(songs) { 
+                    //Part 3: User Friendly Display
+                    for(let i = 0; i < songs.genre.length; i++) {
+                        if(selectedGen == songs.genre[i]) {
+                            strHTML += "<li>" + songs.title + ": " + songs.artist + "</li>" + "Genre: " + songs.genre + "<br/>" + "Released: " + songs.released + "<br/>" + "<br/>";
+                        }
+                    }
+                })
+                strHTML += "</ul>";
+                
+                document.getElementById("user-friendly").innerHTML = strHTML;
+            }
+            
+        </script>
+        
+        <label for="genreForm">Select a Genre:</label>
+        <select id = "genreForm">
+            <option value = "Pop">Pop</option>
+            <option value = "Jazz">Jazz</option>
+            <option value = "Soul">Soul</option>
+            <option value = "Alternative/Indie">Alternative/Indie</option>
+            <option value = "RnB">RnB</option>
+        </select>
+        
+        <button onclick="filter()">Go</button>
+    </body>
+</html>
