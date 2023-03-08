@@ -1,23 +1,28 @@
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>JSON Example</title>
-  </head>
-  <body>
-    <div id="songDisplay"></div>
+    <head>
+        <meta charset="UTF-8">
+        <title>JSON Example</title>
+    </head> 
+    <style> 
+    </style>
+    <body>
+        <pre id="songDisplay" style=
+            "color:rgb(0, 0, 0); font-size: 20px; font-weight: bold;">
+        </pre>
 
-    <script>
-      fetch("songs.json")
-        .then(response => response.json())
-        .then(data => {  
-            for(var i = 0; i < data.length; i++) 
-            { 
-                document.getElementById("songDisplay").innerHTML = "hi";
-            }
-        });
+        <script>
+        fetch("songs.json")
+            .then(response => response.json())
+            .then(data => {   
+                var songData = document.getElementById("songDisplay");
+                for(var i = 0; i < data.length; i++) 
+                { 
+                    songData.textContent = JSON.stringify(data[i]);
+                }
+            });
           
-    </script>
-  </body>
+        </script>
+    </body>
 </html>
 
 
