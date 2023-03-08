@@ -15,18 +15,20 @@
             $.get( "https://laurenlangbort.github.io/json-practice-hw7/songs.json", 
             function( data ) 
             {
-                document.write("Part 3: " + "<br>");
-                strHTML= "<ul>";
+                console.log(typeof data); 
+      
+                var display= "<ul>"; 
+                console.log(display);
                 data.forEach(function(songs) 
                 { 
-                    strHTML += "<li>" 
+                    display += "<li>" 
                     + songs.song + "<br>" 
                     + "Artists: " + songs.artists + "<br>"
                     + "Genres: " + songs.genres + "<br>"
                     + "Released: " + songs.year + "<br><br>" + "</li>";
                 }) 
-            strHTML += "</ul>";
-            document.write(strHTML + "<br><br>");
+            display += "</ul>";
+            document.write(display + "<br><br>");
         })
         </script>
     </body>
