@@ -17,9 +17,11 @@
                 var songData = document.getElementById("songDisplay");
                 for(var i = 0; i < data.length; i++) 
                 { 
-                    songData.textContent = JSON.stringify(data[i]);
+                    songData.textContent = JSON.stringify(data[i]); 
+                    console.log(data[i]);
                 }
-            });
+            }); 
+            alert("hi");
           
         </script>
     </body>
