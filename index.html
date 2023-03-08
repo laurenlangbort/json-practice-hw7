@@ -11,7 +11,7 @@
              fetch("https://laurenlangbort.github.io/json-practice-hw7/songs.json")
                 .then(response => response.json())
                 .then(data => {
-                    var jsonSongs = JSON.stringify(data, null, 2);
+                    var jsonSongs = JSON.stringify(data);
                     document.getElementById("songList").textContent = jsonSongs;
                 }); 
         </script>
