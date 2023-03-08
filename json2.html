@@ -6,10 +6,9 @@
     </head>
     <body> 
         <pre id="songlist"> </pre>  
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js">    
-        </script>
+    
         <script>  
-             fetch("songs.json")
+             fetch("https://github.com/laurenlangbort/json-practice-hw7/blob/main/songs.json")
                 .then(response => response.json())
                 .then(data => {
                     var jsonSongs = JSON.stringify(data, null, 2);
