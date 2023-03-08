@@ -1,0 +1,88 @@
+{
+    "songs": [ 
+        { 
+            "song": "Diamonds - Remix", 
+            "artists": ["Rihanna", "Kanye West"], 
+            "genres": "Pop", 
+            "year": "2012" 
+        }, 
+        { 
+            "song": "Love on the Brain", 
+            "artists": "Rihanna", 
+            "genres": ["Alternative/Indie", "Pop", "Hip-Hop/Rap"], 
+            "year": "2016"
+        }, 
+        { 
+            "song": "We Found Love", 
+            "artists": "Rihanna",  
+            "genres": ["Electric", "Pop"], 
+            "year": "2011"
+        }, 
+        { 
+            "song": "Miss Independent", 
+            "artists": "Ne-Yo", 
+            "genres": "R and B/Soul", 
+            "year": "2008"
+        }, 
+        { 
+            "song": "Because of You", 
+            "artists": "Ne-Yo", 
+            "genres": "R and B/Soul", 
+            "year": "2007"
+        }, 
+        { 
+            "song": "Prone", 
+            "artists": "Masego", 
+            "genres": "R and B", 
+            "year": "2018"
+        }, 
+        { 
+            "song": "Mystery Lady", 
+            "artists": ["Masego", "Don Toliver"],
+            "genres": ["R and B/Soul", "Afrobeats"], 
+            "year": "2020"
+        }, 
+        { 
+            "song": "Tadow", 
+            "artists": ["FKJ", "Masego"],
+            "genres": ["R and B/Soul", "Indian Film Pop"], 
+            "year": "2012"
+        }, 
+        { 
+            "song": "Navajo", 
+            "artists": "Masego",
+            "genres": "Jazz Rap", 
+            "year": "2017"
+        }, 
+        { 
+            "song": "Ocean Drive", 
+            "artists": "Duke Dumont",
+            "genres": "Electronic", 
+            "year": "2015"
+        }, 
+        { 
+            "song": "Time N Affection", 
+            "artists": ["Rema", "Chris Brown"],
+            "genres": "Afrobeats", 
+            "year": "2022"
+        }, 
+        { 
+            "song": "Highest Building", 
+            "artists": ["Flume", "Oklou"],
+            "genres": "Electronic", 
+            "year": "2022"
+        }, 
+        { 
+            "song": "Love Song", 
+            "artists": "Sara Bareilles",
+            "genres": "Pop", 
+            "year": "2022"
+        }, 
+        { 
+            "song": "Thank You For Nothing", 
+            "artists": "Rachel Chinouriri",
+            "genres": ["R and B", "Afrobeats"], 
+            "year": "2008"
+        }
+    ] 
+}

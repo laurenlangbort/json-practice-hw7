@@ -1,0 +1,20 @@
+<html> 
+    <head> 
+        <title> 
+            JSON Display
+        </title>
+    </head>
+    <body> 
+        <pre id="songlist"> </pre>  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js">    
+        </script>
+        <script>  
+             fetch("songs.json")
+                .then(response => response.json())
+                .then(data => {
+                    var jsonSongs = JSON.stringify(data, null, 2);
+                    document.getElementById("songList").textContent = jsonSongs;
+                }); 
+        </script>
+    </body>
+</html>
