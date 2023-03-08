@@ -10,13 +10,13 @@
         <div class="part3"></div>
 
         <script>
-            var songs = ""; 
+            var songList = ""; 
             fetch("https://laurenlangbort.github.io/json-practice-hw7/songs.json")
                 .then(response => response.json())
                 .then(data => {
-                    songs = JSON.stringify(data);  
+                    songList = JSON.stringify(data);  
 
-                    var displaySongs = str + "<br>"; 
+                    var displaySongs = songList + "<br>"; 
                     
                     var display = "<ul>"; 
 
@@ -28,13 +28,14 @@
 
                     display += "</ul>"; 
 
-                    document.getElementById("part2").innerHTML = displaySongs; 
-                    document.getElementById("part3").innerHTML = display;
+                    document.getElementsByClassName("part2")[0].innerHTML = displaySongs; 
+                    document.getElementsByClassName("part3")[0].innerHTML = display;
                 });  
            
         </script>
     </body>
 </html>
+
 
 
 
