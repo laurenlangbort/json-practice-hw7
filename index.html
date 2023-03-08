@@ -6,16 +6,16 @@
     <style> 
     </style>
     <body>
-        <div class="part2"></div> 
-        <div class="part3"></div>
+        <div id="part2"></div> 
+        <div id="part3"></div>
 
         <script>
             var songList = ""; 
             fetch("https://laurenlangbort.github.io/json-practice-hw7/songs.json")
                 .then(response => response.json())
-                .then(data => {
+                .then(data => { 
                     songList = JSON.stringify(data);  
-
+                    document.getElementById("songlist").textContent = jsonSongs; 
                     var displaySongs = songList + "<br>"; 
                     
                     var display = "<ul>"; 
@@ -28,8 +28,8 @@
 
                     display += "</ul>"; 
 
-                    document.getElementsByClassName("part2")[0].innerHTML = displaySongs; 
-                    document.getElementsByClassName("part3")[0].innerHTML = display;
+                    document.getElementById("part2").textContent = displaySongs; 
+                    document.getElementById("part3").textContent = display;
                 });  
            
         </script>
