@@ -14,8 +14,10 @@
             var songList = ""; 
             fetch("https://laurenlangbort.github.io/json-practice-hw7/songs.json")
                 .then(response => response.json())
-                .then(data => { 
+                .then(data => {  
+                    console.log(typeof data);
                     songList = JSON.stringify(data);  
+                    console.log(typeof data); 
                     document.getElementById("songlist").textContent = songList; 
                     var displaySongs = songList + "<br>"; 
                     
@@ -29,17 +31,13 @@
 
                     display += "</ul>"; 
 
-                    document.getElementById("part2").textContent = displaySongs; 
-                    document.getElementById("part3").textContent = display;
+                    document.getElementById("part2").innerHTML = displaySongs; 
+                    document.getElementById("part3").innerHTML = display;
                 });  
            
         </script>
     </body>
 </html>
-
-
-
-
 
 
 
