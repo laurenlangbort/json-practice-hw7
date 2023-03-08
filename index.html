@@ -5,7 +5,8 @@
     </head> 
     <style> 
     </style>
-    <body>
+    <body> 
+        <div id="songlist"></div>
         <div id="part2"></div> 
         <div id="part3"></div>
 
@@ -15,7 +16,7 @@
                 .then(response => response.json())
                 .then(data => { 
                     songList = JSON.stringify(data);  
-                    document.getElementById("songlist").textContent = jsonSongs; 
+                    document.getElementById("songlist").textContent = songList; 
                     var displaySongs = songList + "<br>"; 
                     
                     var display = "<ul>"; 
