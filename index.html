@@ -11,30 +11,23 @@
         <div id="part3"></div>
 
         <script>
-            var songList = ""; 
-            fetch("https://laurenlangbort.github.io/json-practice-hw7/songs.json")
-                .then(response => response.json())
-                .then(data => {  
-                    console.log(typeof data);
-                    songList = JSON.stringify(data);  
-                    console.log(typeof data); 
-                    document.getElementById("songlist").textContent = songList; 
-                    var displaySongs = songList + "<br>"; 
-                    
-                    var display = "<ul>"; 
-
-                    data.forEach(function(songs) { 
-                        display += "<li>" + songs.song + "</li> Artist: " 
-                        + songs.artist + "</br>  Genre: " +  songs.genre 
-                        + "</br> Released: " + songs.year + "</br>";
-                    }) 
-
-                    display += "</ul>"; 
-
-                    document.getElementById("part2").innerHTML = displaySongs; 
-                    document.getElementById("part3").innerHTML = display;
-                });  
-           
+            $.get( "https://laurenlangbort.github.io/json-practice-hw7/songs.json", 
+            function( data ) 
+            {
+                str = JSON.stringify(data);
+                document.write("Part 3: " + "<br>");
+                strHTML= "<ul>";
+                data.forEach(function(songs) 
+                { 
+                    strHTML += "<li>" 
+                    + songs.song + "<br>" 
+                    + "Artists: " + songs.artists + "<br>"
+                    + "Genres: " + songs.genres + "<br>"
+                    + "Released: " + songs.year + "<br><br>" + "</li>";
+                }) 
+            strHTML += "</ul>";
+            document.write(strHTML + "<br><br>");
+        })
         </script>
     </body>
 </html>
