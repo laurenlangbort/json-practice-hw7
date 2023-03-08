@@ -6,32 +6,59 @@
     <style>  
         ul {  
             text-decoration: none;
+        } 
+
+        li { 
+            text-decoration: none;
         }
     </style>
     <body> 
-        <div id="part3"></div>
+        <form>
+            Genre:
+            <select name="genre" id="genre">
+                <option value="Pop"> Pop </option>
+                <option value="R and B/Soul"> R and B/Soul </option>
+                <option value="Alternative/Indie"> Alternative/Indie </option>
+                <option value="Hip-Hop/Rap"> Hip-Hop/Rap </option> 
+                <option value="Electric"> Electric </option> 
+                <option value="R and B"> R and B </option> 
+                <option value="Afrobeats"> Afrobeats </option> 
+                <option value="Jazz Rap"> Jazz Rap </option> 
+                <option value="Electronic"> Electronic </option>
+            </select>
+            <input type="button" value = "Filter" id="button"> 
+        </form>  
+        <div id="part4"></div>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js">    
         </script>
         <script> 
-            $.get( "https://laurenlangbort.github.io/json-practice-hw7/songs.json", 
-            function( data ) 
-            {
-                console.log(typeof data);  
-                console.log(data[0]);
-      
-                var display= "<ul>"; 
-                console.log(display);
-                data.forEach(function(songs) 
-                { 
-                    display += "<li>" 
-                    + songs.song + "<br>" 
-                    + "Artists: " + songs.artists + "<br>"
-                    + "Genres: " + songs.genres + "<br>"
-                    + "Released: " + songs.year + "<br><br>" + "</li>";
-                }) 
-            display += "</ul>";
-            document.getElementById("part3").innerHTML = display + "<br><br>";
-        })
+           $(document).ready(function() {
+                $("#button").click(function() {
+    
+                    var genreOption = document.getElementById("genre").selectedIndex;
+                    var picked = document.getElementById("genre").options[genreOption].value; 
+
+                $.get("https://laurenlangbort.github.io/json-practice-hw7/songs.json", 
+                function( data ) 
+                    {
+                        var display = "<ul>";
+                        data.forEach(function(song) 
+                        { 
+                            if (picked == song.genres)
+                            {
+                                display += "<li>" 
+                                + song.song + "<br>" 
+                                + "Artist: " + song.artists + "<br>"
+                                + "Genre: " + song.genres + "<br>"
+                                + "Year: " + song.years + "<br><br>" + "</li>";
+                            } 
+                        }); 
+                        display += "</ul>";
+                        document.getElementById("part4").innerHTML = display; 
+                    }); 
+                }); 
+            });
         </script>
     </body>
 </html>
