@@ -1,5 +1,4 @@
-{
-    "songs": [ 
+[ 
         { 
             "song": "Diamonds - Remix", 
             "artists": ["Rihanna", "Kanye West"], 
@@ -85,4 +84,3 @@
             "year": "2008"
         }
     ] 
-}
