@@ -1,19 +1,39 @@
-<html> 
-    <head> 
-        <title> 
-            JSON Display
-        </title>
-    </head>
-    <body> 
-        <pre id="songlist"> </pre>  
-    
-        <script>  
-             fetch("https://laurenlangbort.github.io/json-practice-hw7/songs.json")
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JSON Example</title>
+    </head> 
+    <style> 
+    </style>
+    <body>
+        <div class="part2"></div> 
+        <div class="part3"></div>
+
+        <script>
+            var songs = ""; 
+            fetch("https://laurenlangbort.github.io/json-practice-hw7/songs.json")
                 .then(response => response.json())
                 .then(data => {
-                    var jsonSongs = JSON.stringify(data);
-                    document.getElementById("songlist").textContent = jsonSongs;
-                }); 
+                    songs = JSON.stringify(data);  
+
+                    var displaySongs = str + "<br>"; 
+                    
+                    var display = "<ul>"; 
+
+                    data.forEach(function(songs) { 
+                        display += "<li>" + songs.song + "</li> Artist: " 
+                        + songs.artist + "</br>  Genre: " +  songs.genre 
+                        + "</br> Released: " + songs.year + "</br>";
+                    }) 
+
+                    display += "</ul>"; 
+
+                    document.getElementById("part2").innerHTML = displaySongs; 
+                    document.getElementById("part3").innerHTML = display;
+                });  
+           
         </script>
     </body>
 </html>
+
+
