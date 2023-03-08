@@ -6,37 +6,32 @@
     <style> 
     </style>
     <body>
-        <h1>Song List</h1>
-        <table id="songDisplay">
-            <thead>
-            <tr>
-                <th>Artist</th>
-                <th>Genre</th>
-                <th>Released</th>
-            </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+        <div class="part2"></div> 
+        <div class="part3"></div>
 
         <script>
-        fetch("https://laurenlangbort.github.io/json-practice-hw7/songs.json")
-            .then(response => response.json())
-            .then(data => {   
-                var songData = document.getElementById("songDisplay").getElementsByTagName('tbody')[0];;
-                for(var i = 0; i < data.length; i++) 
-                {  
-                    var row = songData.insertRow(); 
-                    var artist = row.insertCell(0); 
-                    var genre = row.insertCell(1); 
-                    var year = row.insertCell(2); 
+            var songs = ""; 
+            fetch("https://laurenlangbort.github.io/json-practice-hw7/songs.json")
+                .then(response => response.json())
+                .then(data => {
+                    songs = JSON.stringify(data);  
 
-                    artist.innerHTML = data[i].artists.join(", "); 
-                    genre.innerHTML = data[i].genres.join(", ");  
-                    year.innerHTML = data[i].year;
-                } 
-            });
-        
+                    var displaySongs = str + "<br>"; 
+                    
+                    var display = "<ul>"; 
+
+                    data.forEach(function(songs) { 
+                        display += "<li>" + songs.song + "</li> Artist: " 
+                        + songs.artist + "</br>  Genre: " +  songs.genre 
+                        + "</br> Released: " + songs.year + "</br>";
+                    }) 
+
+                    display += "</ul>"; 
+
+                    document.getElementById("part2").innerHTML = displaySongs; 
+                    document.getElementById("part3").innerHTML = display;
+                });  
+           
         </script>
     </body>
 </html>
