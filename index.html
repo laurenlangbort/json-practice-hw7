@@ -45,13 +45,23 @@
                         var display = "<ul>";
                         data.forEach(function(song) 
                         { 
-                            if (picked == song.genres)
+                            if (Array.isArray(song.genres)) 
+                            { 
+                                if(song.genres.includes(picked)) 
+                                { 
+                                    display += "<li>" 
+                                    + song.song + "<br>" 
+                                    + "Artist: " + song.artists + "<br>"
+                                    + "Genre: " + song.genres.join(", ") + "<br>"
+                                    + "Year: " + song.years + "<br><br>" + "</li>";
+                                }
+                            } else if (picked == song.genres)
                             {
                                 display += "<li>" 
                                 + song.song + "<br>" 
                                 + "Artist: " + song.artists + "<br>"
                                 + "Genre: " + song.genres + "<br>"
-                                + "Year: " + song.year + "<br><br>" + "</li>";
+                                + "Year: " + song.years + "<br><br>" + "</li>";
                             } 
                         }); 
                         display += "</ul>";
@@ -62,7 +72,6 @@
         </script>
     </body>
 </html>
-
 
 
 
