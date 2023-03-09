@@ -8,16 +8,19 @@
         <pre id="songlist"> </pre>   
         <div id="part3"></div>
         <script>  
-             fetch("songs.json")
-                .then(response => response.json())
-                .then(data => {
-                    var jsonSongs = JSON.stringify(data); 
-                    document.getElementById("songlist").textContent = jsonSongs; 
-                });  
+            //  fetch("songs.json")
+            //     .then(response => response.json())
+            //     .then(data => {
+            //         var jsonSongs = JSON.stringify(data); 
+            //         document.getElementById("songlist").textContent = jsonSongs; 
+            //     });  
             
             $.get( "https://laurenlangbort.github.io/json-practice-hw7/songs.json", 
             function( data ) 
-            {
+            { 
+
+                var jsonSongs = JSON.stringify(data); 
+                document.getElementById("songlist").textContent = jsonSongs; 
                 console.log(typeof data);  
                 console.log(data[0]);
       
@@ -37,7 +40,6 @@
         </script>
     </body>
 </html>
-
 
 
 
