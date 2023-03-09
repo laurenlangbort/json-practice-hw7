@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JSON Example</title>
+    </head> 
+    <style>  
+        ul {  
+            text-decoration: none;
+        } 
+
+        li { 
+            text-decoration: none;
+        }
+    </style>
+    <body> 
+        <div id="part3"></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js">    
+        </script>
+        <script> 
+            $.get( "https://laurenlangbort.github.io/json-practice-hw7/songs.json", 
+            function( data ) 
+            {
+                console.log(typeof data);  
+                console.log(data[0]);
+      
+                var display= "<ul>"; 
+                console.log(display);
+                data.forEach(function(songs) 
+                { 
+                    display += "<li>" 
+                    + songs.song + "<br>" 
+                    + "Artists: " + songs.artists + "<br>"
+                    + "Genres: " + songs.genres + "<br>"
+                    + "Released: " + songs.year + "<br><br>" + "</li>";
+                }) 
+            display += "</ul>";
+            document.getElementById("part3").innerHTML = display + "<br><br>";
+        })
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
